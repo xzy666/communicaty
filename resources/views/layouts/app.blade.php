@@ -27,8 +27,8 @@
                 <li><a href="#about">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../navbar/">登录</a></li>
-                <li><a href="../navbar/">注册</a></li>
+                <li><a href="{{url('user/login')}}">登录</a></li>
+                <li><a href="{{url('user/register')}}">注册</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户名 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -50,7 +50,9 @@
         <div class="jumbotron">
             <h1>xizy's communicaty</h1>
             <p>欢迎来到耀耀社区！
+               @if(Auth::check())
                 <a class="btn btn-lg btn-danger pull-right" href="../../components/#navbar" role="button">发表文章</a></p>
+            @endif
         </div>
 
     </div>

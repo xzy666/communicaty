@@ -89,8 +89,23 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => '用户名不能为空',
+            'min' => '用户名最少为六个字符',
+        ],
+        'email' => [
+            'required' => '邮箱不能为空',
+            'email' => '邮箱格式不正确',
+            'unique' => '邮箱已经被注册',
+        ],
+        'password' => [
+            'required' => '密码不能为空',
+            'min' => '密码最少为六个字符',
+            'confirmed' => '两次密码不一致',
+        ],
+        'password_confirmation' => [
+            'required' => '确认密码不能为空',
+            'min' => '确认密码最少为六个字符',
         ],
     ],
 

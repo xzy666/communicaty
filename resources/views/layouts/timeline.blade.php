@@ -29,5 +29,13 @@
                 {{$discussions->render()}}
             </div>
         </div>
+        <div class="col-md-2 col-lg-offset-1">
+            @include('layouts.about')
+            <hr>
+            @include('layouts.archive')
+            <hr>
+            @include('layouts.elsewhere')
+
+        </div>
     </div>
 @endsection
