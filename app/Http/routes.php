@@ -14,13 +14,18 @@ Route::get('/',function (){
     return view('welcome');
 });
 
-Route::resource('/discussion','DiscussionsController');
+
 
 
 Route::group(['middleware' => ['web']], function () {
+    //帖子资源路由
+    Route::resource('/discussion','DiscussionsController');
+    Route::post('/discussion/createDis','DiscussionsController@createDis');
     //用户相关路由
     Route::get('user/register','UserController@register');
     Route::post('user/store','UserController@store');
     Route::get('user/login','UserController@login');
+    Route::get('user/logout','UserController@logout');
+    Route::post('user/index','UserController@index');
 });
 

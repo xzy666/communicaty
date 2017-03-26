@@ -7,7 +7,11 @@
 
                 <div class="blog-post">
                     <h2 class="blog-post-title">{{$discussion->title}}</h2>
-                    <p class="blog-post-meta">{{\Carbon\Carbon::parse($discussion->created_at)->diffForHumans()}}&nbsp;by <a href="#">{{$discussion->user->name}}</a></p>
+                    @if(Auth::id()===$discussion->user_id)
+                        <a href="{{url('discussion/'.$discussion->id.'/edit')}}" class="btn btn-danger pull-right">更新帖子</a>
+                    @endif
+                    <p class="blog-post-meta">{{\Carbon\Carbon::parse($discussion->created_at)->diffForHumans()}}&nbsp;by
+                        <a href="#">{{$discussion->user->name}}</a></p>
                     <hr>
                     <h2>Heading</h2>
 
@@ -27,8 +31,8 @@
             </div><!-- /.blog-main -->
 
             <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-           @include('layouts.about')
-               @include('layouts.archive')
+                @include('layouts.about')
+                @include('layouts.archive')
                 @include('layouts.elsewhere')
             </div><!-- /.blog-sidebar -->
 

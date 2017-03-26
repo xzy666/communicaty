@@ -5,16 +5,16 @@
             <div class="form-group col-md-9 col-md-offset-1">
                 @if(session()->has('msg'))
                     <h2>{{session('msg')}}</h2>
-                    @else
-                <h2>登录</h2>
-                    @endif
+                @else
+                    <h2>登录</h2>
+                @endif
 
             </div>
-            <form action="{{url('user/store')}}" method="post">
+            <form action="{{url('user/index')}}" method="post">
                 {{csrf_field()}}
                 <div class="form-group col-md-9 col-md-offset-1">
                     <label for="email">邮箱：</label>
-                    <input type="text" class="form-control" name="email"  placeholder="请输入邮箱" required>
+                    <input type="text" class="form-control" name="email" placeholder="请输入邮箱" required>
                 </div>
 
                 <div class="form-group col-md-9 col-md-offset-1">
@@ -28,5 +28,13 @@
             </form>
         </div>
         @include('errors.common')
+        <div class="form-group col-lg-offset-1 col-md-9">
+            @if(session()->has('status'))
+                <div class="alert alert-danger">
+                    {{session('status')}}
+                </div>
+            @endif
+        </div>
+
     </div>
 @endsection
