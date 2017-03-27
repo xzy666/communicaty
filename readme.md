@@ -1,4 +1,4 @@
-#这是基于laravel5.2 和 bootstrap 的社区网站
+# 这是基于laravel5.2 和 bootstrap 的社区网站
  - 用户系统
  - 评论系统
  - 帖子系统
