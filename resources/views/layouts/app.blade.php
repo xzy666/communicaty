@@ -5,8 +5,10 @@
     <title>Title</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{{asset('js/jquery-3.2.0.min.js')}}"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 </head>
 <body>
 
@@ -65,5 +67,6 @@
     @yield('content')
 </nav>
 
+
 </body>
-</html>
+</ht

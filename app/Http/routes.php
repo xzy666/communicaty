@@ -27,5 +27,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('user/login','UserController@login');
     Route::get('user/logout','UserController@logout');
     Route::post('user/index','UserController@index');
+    //评论资源路由
+    Route::resource('/comment','CommentsController');
 });
 
